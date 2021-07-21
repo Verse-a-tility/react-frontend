@@ -8,7 +8,11 @@ function ApiTest() {
     console.log(response);
   });
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <p>Nalu sucks</p>
+    </div>
+  );
 }
 
 export default ApiTest;
