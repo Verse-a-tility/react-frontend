@@ -7,14 +7,13 @@ import SongRatingList from "./SongRatingList";
 import Iframe from "react-iframe";
 
 function RatingView(props) {
-  const [ratingResults, setRatingResults] = useState([]);
   console.log("playlistSongs is:", props.playlistSongs);
 
   return (
     <div className="container content">
       <div className="row text-center justify-content-center">
         <div className="col-lg-6 col-12">
-          <h2>View Your Results!</h2>
+          <h2>View Your Playlist!</h2>
           <div className="playlist-iframe-container">
             <Iframe
               className="playlist-iframe"
@@ -26,10 +25,7 @@ function RatingView(props) {
               display="initial"
             />
           </div>
-          <SongRatingList
-            playlistSongs={props.playlistSongs}
-            setRatingResults={setRatingResults}
-          />
+          <SongRatingList playlistSongs={props.playlistSongs} />
         </div>
       </div>
     </div>
