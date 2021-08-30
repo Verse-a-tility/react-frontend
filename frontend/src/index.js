@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import ApiTest from "./components/ApiTest";
 import reportWebVitals from "./reportWebVitals";
+import ViewController from "./components/ViewController";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApiTest />
+    <ViewController />
   </React.StrictMode>,
   document.getElementById("root")
 );

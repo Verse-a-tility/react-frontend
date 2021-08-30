@@ -11,6 +11,9 @@ function ApiTest() {
   return (
     <div className="App">
       <p>Nalu sucks</p>
+      <a href="http://localhost:8000/login">
+        <button>Click me!</button>
+      </a>
     </div>
   );
 }
