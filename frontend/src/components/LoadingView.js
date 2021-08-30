@@ -8,7 +8,11 @@ function LoadingView(props) {
   const options = {};
   axios
     .get("http://localhost:8000/createPlaylist", options)
-    .then(props.setCurrentView("DisplayView"));
+    .then(function (response) {
+      props.setCurrentView("DisplayView");
+      props.setPlaylistSongs(response.data.songs);
+      props.setPlaylistId(response.data.ID);
+    });
 
   return (
     <div className="container">
