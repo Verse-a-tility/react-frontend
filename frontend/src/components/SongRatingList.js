@@ -6,6 +6,7 @@ import "./SongRatingList.css";
 
 function SongRatingList(props) {
   const [ratingResults, setRatingResults] = useState([]);
+  const [currentRatingDict, setCurrentRatingDict] = useState({});
   const [displayMessage, setDisplayMessage] = useState(
     "Click submit to rate your playlist on its karaokeability!"
   );
@@ -19,11 +20,15 @@ function SongRatingList(props) {
         <Rating
           emptySymbol="fa fa-star-o fa-2x"
           fullSymbol="fa fa-star fa-2x"
+          initialRating={currentRatingDict[song[0]]}
           onChange={(rating) => {
             const editedRating = (rating * 2) / 10;
             const newRatingResults = ratingResults.concat([
               [song[0], editedRating],
             ]);
+            var tempDict = currentRatingDict;
+            tempDict[song[0]] = rating;
+            setCurrentRatingDict(tempDict);
             setRatingResults(newRatingResults);
           }}
         />
@@ -54,6 +59,7 @@ function SongRatingList(props) {
               axios.post("http://localhost:8000/rating/", ratingData);
             });
             setRatingResults([]);
+            setCurrentRatingDict({});
             setDisplayMessage(
               "Thank you for helping improve Verse-A-Tility! If you wish to change your ratings, rerate a song and then click submit again"
             );
