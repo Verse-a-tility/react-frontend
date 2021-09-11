@@ -7,11 +7,16 @@ function LoadingView(props) {
 
   const options = {};
   axios
-    .get("http://localhost:8000/createPlaylist", options)
+    .get("http://localhost:8000/createPlaylist/", options)
     .then(function (response) {
-      props.setCurrentView("DisplayView");
-      props.setPlaylistSongs(response.data.songs);
-      props.setPlaylistId(response.data.ID);
+      console.log(
+        "Got into the then in loading view's call to createPlaylist. Response is:",
+        response.data
+      );
+      props.setCurrentView("RatingView");
+      props.setPlaylistSongs(response.data[1]);
+
+      props.setPlaylistId(response.data[0][0]);
     });
 
   return (

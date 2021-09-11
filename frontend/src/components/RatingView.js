@@ -7,7 +7,7 @@ import SongRatingList from "./SongRatingList";
 import Iframe from "react-iframe";
 
 function RatingView(props) {
-  console.log("playlistSongs is:", props.playlistSongs);
+  console.log("playlistSong Ids is:", props.playlistSongs);
 
   return (
     <div className="container content">

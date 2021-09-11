@@ -6,22 +6,23 @@ import LoadingView from "./LoadingView";
 import RatingView from "./RatingView";
 
 function ViewController() {
-  const [currentView, setCurrentView] = useState("RatingView");
+  const [currentView, setCurrentView] = useState("HomeView");
   const [playlistId, setPlaylistId] = useState("0IvjmmF4JolSbadyHg5rEr");
-  const [playlistSongs, setPlaylistSongs] = useState([
-    ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin"],
-    ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone"],
-  ]);
+  const [playlistSongs, setPlaylistSongs] = useState([]);
+  // const [playlistSongs, setPlaylistSongs] = useState([
+  //   ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin"],
+  //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone"],
+  // ]);
 
   if (currentView == "HomeView") {
-    console.log("AHHH");
+    console.log("The view is home view");
     return <HomeView setCurrentView={setCurrentView} />;
   }
   if (currentView == "LoadingView") {
     return (
       <LoadingView
         setCurrentView={setCurrentView}
-        setPlaylist={setPlaylistId}
+        setPlaylistId={setPlaylistId}
         setPlaylistSongs={setPlaylistSongs}
       />
     );
