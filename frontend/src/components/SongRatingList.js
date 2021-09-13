@@ -56,7 +56,10 @@ function SongRatingList(props) {
                 spotify_id: ratingPair[0],
                 rating: ratingPair[1],
               };
-              axios.post("http://localhost:8000/rating/", ratingData);
+              axios.post(
+                "https://verseatility-backend.herokuapp.com/rating/",
+                ratingData
+              );
             });
             setRatingResults([]);
             setCurrentRatingDict({});

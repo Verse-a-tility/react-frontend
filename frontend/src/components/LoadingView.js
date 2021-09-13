@@ -10,7 +10,10 @@ function LoadingView(props) {
   //   UseEffect prevents this axios call from being called twice
   useEffect(() => {
     axios
-      .get("http://localhost:8000/createPlaylist/", options)
+      .get(
+        "https://verseatility-backend.herokuapp.com/createPlaylist/",
+        options
+      )
       .then(function (response) {
         console.log(
           "Got into the axios call in the loading view's call to createPlaylist. Response is:",
