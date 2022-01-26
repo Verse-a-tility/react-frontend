@@ -5,13 +5,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function LoadingView(props) {
   //   const [loadingState, setLoadingState] = useState(true);
   console.log("in the top of loadingView");
+  console.log("access code is:", props.accessCode);
 
   const options = {};
+  const client_id = "b36ac668448643798290591e95096ff7";
   //   UseEffect prevents this axios call from being called twice
   useEffect(() => {
     axios
       .get(
-        "https://verseatility-backend.herokuapp.com/createPlaylist/",
+        "https://verseatility-backend.herokuapp.com/createPlaylist?code=" +
+          props.accessCode,
         options
       )
       .then(function (response) {

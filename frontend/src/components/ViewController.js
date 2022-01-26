@@ -9,6 +9,7 @@ function ViewController() {
   const [currentView, setCurrentView] = useState("HomeView");
   const [playlistId, setPlaylistId] = useState("0IvjmmF4JolSbadyHg5rEr");
   const [playlistSongs, setPlaylistSongs] = useState([]);
+  const [accessCode, setAccessCode] = useState("");
   // const [playlistSongs, setPlaylistSongs] = useState([
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin"],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone"],
@@ -16,7 +17,9 @@ function ViewController() {
 
   if (currentView == "HomeView") {
     console.log("The view is home view");
-    return <HomeView setCurrentView={setCurrentView} />;
+    return (
+      <HomeView setCurrentView={setCurrentView} setAccessCode={setAccessCode} />
+    );
   }
   if (currentView == "LoadingView") {
     return (
@@ -24,6 +27,7 @@ function ViewController() {
         setCurrentView={setCurrentView}
         setPlaylistId={setPlaylistId}
         setPlaylistSongs={setPlaylistSongs}
+        accessCode={accessCode}
       />
     );
   }

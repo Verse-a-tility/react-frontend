@@ -9,6 +9,15 @@ import CreatePlaylistButton from "./CreatePlaylistButton";
 function HomeView(props) {
   const [numUsers, setNumUsers] = useState(0);
 
+  const url = window.location.href;
+  const queries = url.split("=");
+  const code = queries[queries.length - 1];
+  console.log("code is:", code);
+  console.log("queries is:", queries);
+  if (queries.length > 1) {
+    props.setAccessCode(code);
+    props.setCurrentView("LoadingView");
+  }
   return (
     <div className="HomeViewContent container">
       <div className="row text-center justify-content-center">
