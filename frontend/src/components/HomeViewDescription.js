@@ -7,11 +7,11 @@ function HomeViewDescription() {
     <div className="container content">
       <div className="row justify-content-center">
         <div className="col-lg-10 col-12">
-          <p>
-            This is verse-a-tility, a website that will create a playlist of the
-            most karaokeale songs in your Spotify library! Simply click the
-            "create playlist" button below and let our magic algorithm do its
-            work! <br /> This website is currently in Beta, so be gentle :)
+          <p className="main-text">
+            Never know what to sing when you’re out for karoake night?
+            Verse-a-tility, an AI-generated algorithm, will determine a playlist
+            of perfectly karoakeble songs for you, according to your Spotify
+            taste.
           </p>
         </div>
       </div>

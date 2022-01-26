@@ -1,0 +1,12 @@
+button {
+  border-radius: 100px;
+  width: 80%;
+  background-color: var(--color-text);
+  color: #ffffff;
+  border: 0px;
+  height: 2.5rem;
+}
+
+button:hover {
+  background-color: var(--hover-green);
+}

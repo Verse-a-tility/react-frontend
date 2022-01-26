@@ -1,0 +1,17 @@
+@import "../styles/variables.css";
+@import "../styles/fonts.css";
+
+body {
+  font-family: var(--main-font);
+  color: var(--color-text);
+  background-color: var(--background-green);
+}
+
+.header-text {
+  font-size: 2.4rem;
+  padding: 1rem 1rem;
+}
+
+.main-text {
+  font-size: 1.3rem;
+}
