@@ -6,6 +6,7 @@ import "./CreatePlaylistButton.css";
 function CreatePlaylistButton(props) {
   return (
     <div className="content">
+      {/* <a href="https://accounts.spotify.com/authorize?client_id=b36ac668448643798290591e95096ff7&response_type=code&redirect_uri=http://localhost:3000"> */}
       <a href="https://accounts.spotify.com/authorize?client_id=b36ac668448643798290591e95096ff7&response_type=code&redirect_uri=https://verseatility.co">
         <button>Create Playlist</button>
       </a>

@@ -1,4 +1,25 @@
-.content {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.made-by-content {
+  padding-top: 5rem;
+  padding-left: 0.5rem;
+  margin-left: 0;
+  text-align: left;
+  width: 20rem;
+}
+
+a {
+  color: var(--color-text);
+}
+
+a:hover {
+  color: var(--hover-green);
+}
+
+.made-by-container {
+  position: absolute;
+  bottom: 0%;
+  left: 0.5rem;
+}
+
+.made-by-text {
+  font-size: 1rem;
 }

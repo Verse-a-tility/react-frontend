@@ -3,7 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomeView.css";
 import HomeView from "./HomeView";
 import LoadingView from "./LoadingView";
+import FinishedLoadingView from "./FinishedLoadingView";
 import RatingView from "./RatingView";
+import PlaylistView from "./PlaylistView";
 
 function ViewController() {
   const [currentView, setCurrentView] = useState("HomeView");
@@ -31,13 +33,22 @@ function ViewController() {
       />
     );
   }
+  if (currentView == "FinishedLoadingView") {
+    return <FinishedLoadingView setCurrentView={setCurrentView} />;
+  }
   if (currentView == "RatingView") {
     return (
       <RatingView
         setCurrentView={setCurrentView}
         playlistId={playlistId}
         playlistSongs={playlistSongs}
+        setPlaylistSongs={setPlaylistSongs}
       />
+    );
+  }
+  if (currentView == "PlaylistView") {
+    return (
+      <PlaylistView setCurrentView={setCurrentView} playlistId={playlistId} />
     );
   } else {
     return <p>Uh Oh</p>;
