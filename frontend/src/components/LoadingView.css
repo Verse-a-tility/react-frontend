@@ -1,4 +1,13 @@
 .loading-header {
-  padding-top: 15rem;
+  padding-top: 25vh;
   padding-bottom: 3rem;
+}
+
+.sine-container {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.loading-text-container {
+  height: 45vh;
 }

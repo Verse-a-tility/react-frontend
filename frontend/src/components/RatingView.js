@@ -17,6 +17,7 @@ function RatingView(props) {
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin", "Boney M."],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone", "Soulja Boy"],
   // ];
+  console.log("currentSongNumber is:", currentSongNumber);
   if (currentSongNumber == 10) {
     props.setCurrentView("PlaylistView");
   }
@@ -57,6 +58,7 @@ function RatingView(props) {
             currentSongNumber={currentSongNumber}
             currSong={playlistSongs[currentSongNumber]}
             setCurrentSongNumber={setCurrentSongNumber}
+            setCurrentView={props.setCurrentView}
           />
         </div>
       </div>

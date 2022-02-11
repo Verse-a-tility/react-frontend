@@ -11,12 +11,22 @@ function MadeBy() {
         <div className="row">
           <div className="col-12">
             <p className="made-by-text">
-              Project by: <a href="https://danielknopf.com">Daniel Knopf</a>,
-              <a href="https://www.linkedin.com/in/nalu-tripician-8b3691174/">
+              Project by:{" "}
+              <a target="_blank" href="https://danielknopf.com">
+                Daniel Knopf
+              </a>
+              ,{" "}
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/nalu-tripician-8b3691174/"
+              >
                 Nalu Tripician
               </a>
-              ,
-              <a href="https://www.linkedin.com/in/isabel-wrubel-817203b2/">
+              ,{" "}
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/isabel-wrubel-817203b2/"
+              >
                 Isabel Wrubel
               </a>
             </p>

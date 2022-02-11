@@ -9,7 +9,27 @@ function PlaylistView(props) {
   // TEMP
   // CHANGE PLAYLISTID SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
   var playlistId = props.playlistId;
+  console.log("playlistId in playlistview is", playlistId);
   //   playlistId = "0IvjmmF4JolSbadyHg5rEr";
+
+  const handleOnClick = () => {
+    console.log("IN SHARE CLICK");
+    console.log(navigator.share);
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "Verse-a-tility",
+          text: `Check out my top 10 most karaokeable songs—created by Verse-a-tility`,
+          url: "https://open.spotify.com/playlist/" + playlistId,
+        })
+        .then(() => {
+          console.log("Successfully shared");
+        })
+        .catch((error) => {
+          console.error("Something went wrong sharing the blog", error);
+        });
+    }
+  };
 
   return (
     <div className="container content">
@@ -37,7 +57,7 @@ function PlaylistView(props) {
       </div>
       <div className="row text-center justify-content-center pt-5">
         <div className="col-lg-6 col-12">
-          <button>Share</button>
+          <button onClick={handleOnClick}>Share</button>
         </div>
       </div>
     </div>

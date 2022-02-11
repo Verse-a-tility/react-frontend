@@ -6,6 +6,7 @@ import LoadingView from "./LoadingView";
 import FinishedLoadingView from "./FinishedLoadingView";
 import RatingView from "./RatingView";
 import PlaylistView from "./PlaylistView";
+import "../styles/globals.css";
 
 function ViewController() {
   const [currentView, setCurrentView] = useState("HomeView");

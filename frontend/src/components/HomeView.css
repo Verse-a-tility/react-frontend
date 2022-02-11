@@ -1,3 +1,7 @@
 .HomeViewContent {
   padding-top: 5rem;
 }
+
+body {
+  background-color: black;
+}

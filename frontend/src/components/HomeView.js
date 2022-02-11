@@ -18,6 +18,7 @@ function HomeView(props) {
     props.setAccessCode(code);
     props.setCurrentView("LoadingView");
   }
+
   return (
     <>
       <div className="HomeViewContent container">
@@ -35,22 +36,42 @@ function HomeView(props) {
               spotify_id: "7o9uu2GDtVDr9nsR7ZRN73",
               rating: 0.5,
             };
+           
             axios
-              .get(
-                "https://verseatility-backend.herokuapp.com/detail/7o9uu2GDtVDr9nsR7ZRN73"
+              .post("https://verseatility-backend.herokuapp.com/song/", {
+                spotify_id: "2QTDuJIGKUjR7E2Q6KupIh",
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          }}
+        >
+          SONG
+        </button>
+        <button
+          onClick={() => {
+            const ratingData = {
+              spotify_id: "7o9uu2GDtVDr9nsR7ZRN73",
+              rating: 0.5,
+            };
+            axios
+              .post(
+                "https://verseatility-backend.herokuapp.com/rating/",
+                ratingData
               )
               .then(function (response) {
-                console.log(
-                  "Got into the axios call in the homepage to detail. Response is:",
-                  response.data
-                );
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
               });
-            // axios.post(
-            //   "https://verseatility-backend.herokuapp.com/rating/",
-            //   ratingData
-            // );
           }}
-        ></button> */}
+        >
+          RATING
+        </button> */}
       </div>
     </>
   );

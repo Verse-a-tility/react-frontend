@@ -49,10 +49,17 @@ function RateSong(props) {
                 "https://verseatility-backend.herokuapp.com/rating/",
                 ratingData
               );
-
-              props.setCurrentSongNumber(props.currentSongNumber + 1);
-              setCurrRating(0);
-              setDisplayMessage(defaultDisplayMessage);
+              console.log(
+                "current song number in rate song is:",
+                props.currentSongNumber
+              );
+              if (props.currentSongNumber == 9) {
+                props.setCurrentView("PlaylistView");
+              } else {
+                props.setCurrentSongNumber(props.currentSongNumber + 1);
+                setCurrRating(0);
+                setDisplayMessage(defaultDisplayMessage);
+              }
             }
           }}
         >

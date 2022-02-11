@@ -1,0 +1,11 @@
+.canvas-element {
+  max-height: 20rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .canvas-element {
+    max-height: 40vh;
+    width: 100%;
+  }
+}
