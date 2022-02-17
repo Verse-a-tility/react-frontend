@@ -35,7 +35,7 @@ function LoadingView(props) {
     <>
       <div className="container ">
         <div className="row text-center justify-content-center ">
-          <div className="col-lg-6 col-10 ">
+          <div className="col-lg-6 col-10 loading-text-container">
             <div className="loading-header">
               <h2 className="header-text pb-0">Hang Tight...</h2>
             </div>

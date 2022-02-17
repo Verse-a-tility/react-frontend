@@ -51,7 +51,7 @@ function PlaylistView(props) {
       />
       <div className="container content">
         <div className="row text-center justify-content-center">
-          <div className="col-lg-6 col-12">
+          <div className="col-lg-6 col-12 playlist-text-container">
             <h2 className="header-text py-4">Your Final Playlist</h2>
             <p className="main-text">
               Start planning your next karoake night, because these songs were
@@ -65,8 +65,8 @@ function PlaylistView(props) {
               <Iframe
                 className="playlist-iframe"
                 url={"https://open.spotify.com/embed/playlist/" + playlistId}
-                width="300"
-                height="380"
+                width="100%"
+                height="100%"
                 display="initial"
               />
             </div>
@@ -74,7 +74,7 @@ function PlaylistView(props) {
         </div>
 
         <div className="row text-center justify-content-center pt-5">
-          <div className="col-lg-6 col-12">
+          <div className="col-lg-6 col-12 share-container">
             <button className="green-button" onClick={handleOnClick}>
               Share
             </button>

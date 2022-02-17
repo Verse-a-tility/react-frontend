@@ -1,0 +1,19 @@
+.playlist-text-container {
+  height: 30vh;
+}
+
+.playlist-iframe-container {
+  /* padding-top: 2vh; */
+  height: 45vh;
+  width: 35vh;
+  margin: auto;
+}
+
+.playlist-iframe {
+  border-radius: 10px;
+}
+
+.share-container {
+  height: 10vh;
+  /* align-items: center; */
+}

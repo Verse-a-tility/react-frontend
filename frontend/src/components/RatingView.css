@@ -7,8 +7,19 @@
   border-radius: 10px;
 }
 
-.playlist-iframe-container {
-  padding-top: 2rem;
+.rating-container {
+  height: 25vh;
+}
+
+.rating-header-text {
+  height: 15vh;
+}
+
+.song-iframe-container {
+  height: 45vh;
+  width: 35vh;
+  padding: 0;
+  margin: auto;
 }
 /* 
 .rating-header-text {

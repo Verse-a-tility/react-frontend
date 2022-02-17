@@ -6,8 +6,9 @@
 .sine-container {
   margin: 0 0;
   padding: 0 0;
+  /* height: 5rem; */
 }
 
 .loading-text-container {
-  height: 45vh;
+  height: 65vh;
 }

@@ -4,11 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./RatingView.css";
 // import SongRatingList from "./SongRatingList";
 import RateSong from "./RateSong";
+import { useNavigate } from "react-router-dom";
 
 import Iframe from "react-iframe";
 
 function RatingView(props) {
   const [currentSongNumber, setCurrentSongNumber] = useState(0);
+  const navigate = useNavigate();
+  // Remove the access code from the url
+  useEffect(() => {
+    navigate("/");
+  }, []);
 
   // TEMP
   // CHANGE PLAYLIST SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
@@ -25,7 +31,7 @@ function RatingView(props) {
   console.log("playlistSong Ids is:", props.playlistSongs);
   const oneIndexedSongNumber = currentSongNumber + 1;
   return (
-    <div className="container content rating-container">
+    <div className="container content">
       <div className="row text-center justify-content-center rating-header-text">
         <div className="col-lg-6 col-12">
           <h2 className="header-text pb-0">
@@ -45,15 +51,15 @@ function RatingView(props) {
                 "https://open.spotify.com/embed/track/" +
                 playlistSongs[currentSongNumber][0]
               }
-              width="300rem"
-              height="380rem"
+              width="100%"
+              height="100%"
               display="initial"
             />
           </div>
         </div>
       </div>
       <div className="row text-center justify-content-center pt-2">
-        <div className="col-lg-6 col-12">
+        <div className="col-lg-6 col-12 rating-container">
           <RateSong
             currentSongNumber={currentSongNumber}
             currSong={playlistSongs[currentSongNumber]}
