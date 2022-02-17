@@ -26,7 +26,10 @@ function FinishedLoadingView(props) {
       <div className="row text-center justify-content-center">
         <div className="col-lg-6 col-12">
           <div className="py-3">
-            <button onClick={(e) => props.setCurrentView("RatingView")}>
+            <button
+              className="green-button"
+              onClick={(e) => props.setCurrentView("RatingView")}
+            >
               I'm Ready to Sing!
             </button>
           </div>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PlaylistView.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import SongRatingList from "./SongRatingList";
 
 import Iframe from "react-iframe";
 
 function PlaylistView(props) {
-  // TEMP
-  // CHANGE PLAYLISTID SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
   var playlistId = props.playlistId;
   console.log("playlistId in playlistview is", playlistId);
   //   playlistId = "0IvjmmF4JolSbadyHg5rEr";
@@ -28,39 +28,60 @@ function PlaylistView(props) {
         .catch((error) => {
           console.error("Something went wrong sharing the blog", error);
         });
+    } else {
+      navigator.clipboard.writeText(
+        "https://open.spotify.com/playlist/" + playlistId
+      );
+      toast("Link Copied!");
     }
   };
 
   return (
-    <div className="container content">
-      <div className="row text-center justify-content-center">
-        <div className="col-lg-6 col-12">
-          <h2 className="header-text py-4">Your Final Playlist</h2>
-          <p className="main-text">
-            Start planning your next karoake night, because these songs were
-            picked to impress
-          </p>
+    <>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <div className="container content">
+        <div className="row text-center justify-content-center">
+          <div className="col-lg-6 col-12">
+            <h2 className="header-text py-4">Your Final Playlist</h2>
+            <p className="main-text">
+              Start planning your next karoake night, because these songs were
+              picked to impress
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="row text-center justify-content-center pt-1">
-        <div className="col-lg-6 col-12">
-          <div className="playlist-iframe-container">
-            <Iframe
-              className="playlist-iframe"
-              url={"https://open.spotify.com/embed/playlist/" + playlistId}
-              width="300"
-              height="380"
-              display="initial"
-            />
+        <div className="row text-center justify-content-center pt-1">
+          <div className="col-lg-6 col-12">
+            <div className="playlist-iframe-container">
+              <Iframe
+                className="playlist-iframe"
+                url={"https://open.spotify.com/embed/playlist/" + playlistId}
+                width="300"
+                height="380"
+                display="initial"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="row text-center justify-content-center pt-5">
+          <div className="col-lg-6 col-12">
+            <button className="green-button" onClick={handleOnClick}>
+              Share
+            </button>
           </div>
         </div>
       </div>
-      <div className="row text-center justify-content-center pt-5">
-        <div className="col-lg-6 col-12">
-          <button onClick={handleOnClick}>Share</button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 
   // return (

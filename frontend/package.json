@@ -19,9 +19,10 @@
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.2.0",
     "sine-waves": "^0.3.0",
-    "web-vitals": "^1.1.2",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

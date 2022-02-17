@@ -1,4 +1,4 @@
-button {
+.green-button {
   border-radius: 100px;
   width: 80%;
   background-color: var(--color-text);
@@ -7,6 +7,6 @@ button {
   height: 2.5rem;
 }
 
-button:hover {
+.green-button:hover {
   background-color: var(--hover-green);
 }

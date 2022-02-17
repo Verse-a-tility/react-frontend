@@ -37,6 +37,7 @@ function RateSong(props) {
         </div>
 
         <button
+          className="green-button"
           onClick={(e) => {
             if (currRating == 0) {
               setDisplayMessage(warningMessage);
