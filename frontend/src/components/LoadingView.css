@@ -1,14 +1,15 @@
 .loading-header {
-  padding-top: 25vh;
+  padding-top: 20vh;
   padding-bottom: 3rem;
 }
+
+/* The size of sine container doesn't matter, its actually controlled in canvas.css */
 
 .sine-container {
   margin: 0 0;
   padding: 0 0;
-  /* height: 5rem; */
 }
 
 .loading-text-container {
-  height: 65vh;
+  height: 55vh;
 }

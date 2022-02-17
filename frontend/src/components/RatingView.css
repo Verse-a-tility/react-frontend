@@ -3,24 +3,35 @@
   padding-bottom: 1rem;
 }
 
-.playlist-iframe {
-  border-radius: 10px;
-}
-
 .rating-container {
-  height: 25vh;
+  height: 20vh;
 }
 
 .rating-header-text {
   height: 15vh;
 }
-
 .song-iframe-container {
-  height: 45vh;
-  width: 35vh;
+  height: 48vh;
+  width: 38vh;
   padding: 0;
   margin: auto;
 }
+
+@media only screen and (max-width: 600px) {
+  .rating-header-text > h2 {
+    font-size: 1.9rem;
+  }
+  .rating-header-text > p {
+    font-size: 1.1rem;
+  }
+  .song-iframe-container {
+    height: 38vh;
+    width: 28vh;
+    padding: 0;
+    margin: auto;
+  }
+}
+
 /* 
 .rating-header-text {
   height: 15%;

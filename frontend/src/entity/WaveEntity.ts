@@ -30,7 +30,7 @@ class WaveEntity {
       let wave2 = Math.sin(i * this.waveLength[1] - frequency);
       let wave3 = Math.sin(i * this.waveLength[2] - frequency);
 
-      context.lineTo(i * 2.5, height / 2 + wave1 * wave2 * wave3 * 350);
+      context.lineTo(i * 2.5, height / 2 + wave1 * wave2 * wave3 * 300);
     }
     context.lineTo(width, height);
     context.strokeStyle = "#343434";

@@ -1,5 +1,21 @@
 .playlist-text-container {
-  height: 30vh;
+  height: 25vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .playlist-text-container > p {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .playlist-text-container > p {
+    font-size: 1.1rem;
+  }
+  .playlist-text-container > h2 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
 }
 
 .playlist-iframe-container {
@@ -14,6 +30,6 @@
 }
 
 .share-container {
-  height: 10vh;
-  /* align-items: center; */
+  /* height: 10vh; */
+  padding-top: 5vh;
 }

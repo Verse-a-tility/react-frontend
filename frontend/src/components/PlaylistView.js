@@ -52,7 +52,7 @@ function PlaylistView(props) {
       <div className="container content">
         <div className="row text-center justify-content-center">
           <div className="col-lg-6 col-12 playlist-text-container">
-            <h2 className="header-text py-4">Your Final Playlist</h2>
+            <h2 className="header-text">Your Final Playlist</h2>
             <p className="main-text">
               Start planning your next karoake night, because these songs were
               picked to impress
@@ -73,9 +73,13 @@ function PlaylistView(props) {
           </div>
         </div>
 
-        <div className="row text-center justify-content-center pt-5">
+        <div className="row text-center justify-content-center">
           <div className="col-lg-6 col-12 share-container">
-            <button className="green-button" onClick={handleOnClick}>
+            <button
+              className="green-button"
+              id="share-button"
+              onClick={handleOnClick}
+            >
               Share
             </button>
           </div>

@@ -20,7 +20,7 @@ function RatingView(props) {
   // CHANGE PLAYLIST SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
   var playlistSongs = props.playlistSongs;
   // var playlistSongs = [
-  //   ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin", "Boney M."],
+  //   ["5jkFvD4UJrmdoezzT1FRoP", "Sweet Home Alabama", "Boney M."],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone", "Soulja Boy"],
   // ];
   console.log("currentSongNumber is:", currentSongNumber);
@@ -32,9 +32,9 @@ function RatingView(props) {
   const oneIndexedSongNumber = currentSongNumber + 1;
   return (
     <div className="container content">
-      <div className="row text-center justify-content-center rating-header-text">
-        <div className="col-lg-6 col-12">
-          <h2 className="header-text pb-0">
+      <div className="row text-center justify-content-center">
+        <div className="col-lg-6 col-12  rating-header-text">
+          <h2 className="header-text pb-0 mb-0">
             #{oneIndexedSongNumber} {playlistSongs[currentSongNumber][1]}
           </h2>
           <p className="main-text">By {playlistSongs[currentSongNumber][2]}</p>
