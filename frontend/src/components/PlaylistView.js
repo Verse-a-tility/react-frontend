@@ -54,7 +54,7 @@ function PlaylistView(props) {
           <div className="col-lg-6 col-12 playlist-text-container">
             <h2 className="header-text">Your Final Playlist</h2>
             <p className="main-text">
-              Start planning your next karoake night, because these songs were
+              Start planning your next karaoke night, because these songs were
               picked to impress
             </p>
           </div>

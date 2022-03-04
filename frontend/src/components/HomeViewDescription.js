@@ -8,9 +8,9 @@ function HomeViewDescription() {
       <div className="row justify-content-center">
         <div className="col-lg-10 col-12">
           <p className="main-text">
-            Never know what to sing when you’re out for karoake night?
+            Never know what to sing when you’re out for karaoke night?
             Verse-a-tility, an AI-generated algorithm, will determine a playlist
-            of perfectly karoakeble songs for you, according to your Spotify
+            of perfectly karaokeable songs for you, according to your Spotify
             taste.
           </p>
         </div>

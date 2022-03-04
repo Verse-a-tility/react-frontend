@@ -19,7 +19,7 @@ function FinishedLoadingView(props) {
           </div>
 
           <p className="main-text">
-            Let’s walk through and take a look at your Top 10 Karoake Songs
+            Let’s walk through and take a look at your Top 10 Karaoke Songs
           </p>
         </div>
       </div>

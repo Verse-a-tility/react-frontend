@@ -7,7 +7,7 @@ import "./RateSong.css";
 function RateSong(props) {
   const defaultDisplayMessage = "How likely are you to sing this?";
   const warningMessage =
-    "Please rate the song's Kareokeability before continuing!";
+    "Please rate the song's karaokeability before continuing!";
   // MAKE SURE TO CHANGE
   const [currRating, setCurrRating] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(defaultDisplayMessage);

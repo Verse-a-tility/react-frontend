@@ -41,7 +41,7 @@ function LoadingView(props) {
             </div>
 
             <p className="main-text">
-              Our AI is working hard to generate the most karoakable playlist
+              Our AI is working hard to generate the most karaokeable playlist
               for you. Please don't refresh the page.
             </p>
           </div>
