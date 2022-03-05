@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./LoadingView.css";
 import Canvas from "./canvas.tsx";
+import { useNavigate } from "react-router-dom";
 
 function LoadingView(props) {
   //   const [loadingState, setLoadingState] = useState(true);
@@ -11,8 +12,13 @@ function LoadingView(props) {
 
   const options = {};
   const client_id = "b36ac668448643798290591e95096ff7";
+  const navigate = useNavigate();
+  // Remove the access code from the url
+  // useEffect(() => {}, []);
   //   UseEffect prevents this axios call from being called twice
   useEffect(() => {
+    navigate("/");
+
     axios
       .get(
         "https://verseatility-backend.herokuapp.com/createPlaylist?code=" +
