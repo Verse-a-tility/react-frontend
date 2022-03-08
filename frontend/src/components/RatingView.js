@@ -23,9 +23,16 @@ function RatingView(props) {
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Sweet Home Alabama", "Boney M."],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone", "Soulja Boy"],
   // ];
-  console.log("currentSongNumber is:", currentSongNumber);
-  if (currentSongNumber == 10) {
+  console.log(
+    "currentSongNumber is:",
+    currentSongNumber,
+    "and playlistSoongs,.length is:",
+    playlistSongs.length
+  );
+  if (currentSongNumber == playlistSongs.length) {
+    console.log("in current song number = playlistsoings.length ");
     props.setCurrentView("PlaylistView");
+    return <div></div>;
   }
 
   console.log("playlistSong Ids is:", props.playlistSongs);

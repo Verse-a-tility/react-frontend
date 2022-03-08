@@ -12,8 +12,8 @@ function HomeView(props) {
   const url = window.location.href;
   const queries = url.split("=");
   const code = queries[queries.length - 1];
-  console.log("code is:", code);
-  console.log("queries is:", queries);
+  // console.log("code is:", code);
+  // console.log("queries is:", queries);
   if (queries.length > 1) {
     props.setAccessCode(code);
     props.setCurrentView("LoadingView");

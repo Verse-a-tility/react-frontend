@@ -1,9 +1,15 @@
 .made-by-content {
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
   padding-left: 0.5rem;
   margin-left: 0;
   text-align: left;
   width: 15rem;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .made-by-content {
+    padding-top: 1rem;
+  }
 }
 
 a {
