@@ -34,6 +34,11 @@ function LoadingView(props) {
         props.setPlaylistSongs(response.data[1]);
         props.setPlaylistId(response.data[0][0]);
         console.log("playlist id in loading view is:", response.data[0][0]);
+      })
+      .catch(function (error) {
+        console.log("Error is: ", error);
+        props.setErrorType(error);
+        props.setCurrentView("ErrorView");
       });
   }, [props.accessCode]);
 

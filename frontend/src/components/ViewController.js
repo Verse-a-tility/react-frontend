@@ -6,6 +6,7 @@ import LoadingView from "./LoadingView";
 import FinishedLoadingView from "./FinishedLoadingView";
 import RatingView from "./RatingView";
 import PlaylistView from "./PlaylistView";
+import ErrorView from "./ErrorView";
 import "../styles/globals.css";
 
 function ViewController() {
@@ -13,6 +14,7 @@ function ViewController() {
   const [playlistId, setPlaylistId] = useState("0IvjmmF4JolSbadyHg5rEr");
   const [playlistSongs, setPlaylistSongs] = useState([]);
   const [accessCode, setAccessCode] = useState("");
+  const [errorType, setErrorType] = useState("");
   // const [playlistSongs, setPlaylistSongs] = useState([
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Rasputin"],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone"],
@@ -30,6 +32,7 @@ function ViewController() {
         setCurrentView={setCurrentView}
         setPlaylistId={setPlaylistId}
         setPlaylistSongs={setPlaylistSongs}
+        setErrorType={setErrorType}
         accessCode={accessCode}
       />
     );
@@ -51,6 +54,9 @@ function ViewController() {
     return (
       <PlaylistView setCurrentView={setCurrentView} playlistId={playlistId} />
     );
+  }
+  if (currentView == "ErrorView") {
+    return <ErrorView setCurrentView={setCurrentView} errorType={errorType} />;
   } else {
     return <p>Uh Oh</p>;
   }
