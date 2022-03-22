@@ -23,6 +23,10 @@ body {
   font-size: 1.3rem;
 }
 
+.social-share-green-text {
+  color: var(--social-share-text-green);
+}
+
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .main-text {
     font-size: 1.1rem;

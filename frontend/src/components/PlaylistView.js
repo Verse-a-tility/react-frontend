@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./PlaylistView.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SocialShare from "./SocialShare";
+import html2canvas from "html2canvas";
+
 // import SongRatingList from "./SongRatingList";
 
 import Iframe from "react-iframe";
@@ -11,23 +14,73 @@ function PlaylistView(props) {
   var playlistId = props.playlistId;
   console.log("playlistId in playlistview is", playlistId);
   //   playlistId = "0IvjmmF4JolSbadyHg5rEr";
+  // useEffect(() => {
+  //   const toScreenshot = document.getElementById("social-share");
+  //   html2canvas(toScreenshot, {
+  //     allowTaint: true,
+  //     useCORS: true,
+  //     backgroundColor: "#ecfbf1",
+  //   }).then((canvas) => {
+  //     var link = document.createElement("a");
+  //     link.download = "verse-a-tility.png";
+  //     link.href = canvas.toDataURL();
+  //     link.click();
+  //   });
+  // }, []);
 
   const handleOnClick = () => {
     console.log("IN SHARE CLICK");
     console.log(navigator.share);
     if (navigator.share) {
-      navigator
-        .share({
-          title: "Verse-a-tility",
-          text: `Check out my top 10 most karaokeable songs—created by Verse-a-tility`,
-          url: "https://open.spotify.com/playlist/" + playlistId,
-        })
-        .then(() => {
-          console.log("Successfully shared");
-        })
-        .catch((error) => {
-          console.error("Something went wrong sharing the blog", error);
+      const toScreenshot = document.getElementById("social-share");
+      html2canvas(toScreenshot, {
+        allowTaint: true,
+        useCORS: true,
+        backgroundColor: "#ecfbf1",
+      }).then((canvas) => {
+        // var link = document.createElement("a");
+        // link.download = "verse-a-tility.png";
+        // link.href = canvas.toDataURL();
+        // link.click();
+
+        canvas.toBlob(function (blob) {
+          var url = URL.createObjectURL(blob);
+          console.log("url is:", url);
+          var myFile = new File([blob], "image.png", { type: blob.type });
+
+          if (navigator.canShare({ files: [myFile] })) {
+            navigator
+              .share({
+                files: [myFile],
+                // title: "Verse-a-tility",
+                // text: `Check out my top 10 most karaokeable songs—created by Verse-a-tility`,
+                // url: "https://open.spotify.com/playlist/" + playlistId,
+              })
+              .then(() => {
+                console.log("Successfully shared");
+              });
+          } else {
+            var link = document.createElement("a");
+            link.download = "verse-a-tility.png";
+            link.href = canvas.toDataURL();
+            link.click();
+          }
         });
+        // console.log("type of image is:", typeof image);
+        // navigator
+        //   .share({
+        //     files: [canvas.toBlob()],
+        //     title: "Verse-a-tility",
+        //     text: `Check out my top 10 most karaokeable songs—created by Verse-a-tility`,
+        //     // url: "https://open.spotify.com/playlist/" + playlistId,
+        //   })
+        //   .then(() => {
+        //     console.log("Successfully shared");
+        //   });
+        // .catch((error) => {
+        //   console.error("Something went wrong sharing the image", error);
+        // });
+      });
     } else {
       navigator.clipboard.writeText(
         "https://open.spotify.com/playlist/" + playlistId
@@ -49,6 +102,9 @@ function PlaylistView(props) {
         draggable
         pauseOnHover
       />
+      <div id="social-share">
+        <SocialShare />
+      </div>
       <div className="container content">
         <div className="row text-center justify-content-center">
           <div className="col-lg-6 col-12 playlist-text-container">

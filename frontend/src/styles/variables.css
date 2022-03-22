@@ -8,4 +8,6 @@
     rgba(205, 244, 220, 0.15) 21.35%,
     rgba(62, 198, 132, 0.144) 100%
   );
+  --social-share-background-green: #ecfbf1;
+  --social-share-text-green: #00733a;
 }

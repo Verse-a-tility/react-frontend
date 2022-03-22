@@ -5,7 +5,7 @@ import "./FinishedLoadingView.css";
 
 function FinishedLoadingView(props) {
   //   const [loadingState, setLoadingState] = useState(true);
-  console.log("in the top of loadingView");
+  console.log("in the top of FinishedLoadingView");
 
   const options = {};
   //   UseEffect prevents this axios call from being called twice
