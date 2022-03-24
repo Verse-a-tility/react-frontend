@@ -1,0 +1,20 @@
+.karaoke-score {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.social-share-library-score {
+  font-size: 1.4rem;
+}
+
+.social-share-bold-text {
+  font-weight: 500;
+}
+
+.display-name-text {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

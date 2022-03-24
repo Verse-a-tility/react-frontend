@@ -1,0 +1,26 @@
+.social-share-black-text {
+  color: black;
+  font-weight: 500;
+}
+
+.social-share-artist-text {
+  font-size: 0.65rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.social-share-song-text {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.art-div {
+  padding-right: 0;
+}
+
+.song-text-div {
+  padding-left: 0.3rem;
+}

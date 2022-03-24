@@ -6,12 +6,14 @@ import ViewController from "./components/ViewController";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "./styles/globals.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import TestPage from "./components/TestPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ViewController />}></Route>
+        {/* <Route path="/test" element={<TestPage />}></Route> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

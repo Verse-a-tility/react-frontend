@@ -11,22 +11,42 @@ import html2canvas from "html2canvas";
 import Iframe from "react-iframe";
 
 function PlaylistView(props) {
-  var playlistId = props.playlistId;
-  console.log("playlistId in playlistview is", playlistId);
-  //   playlistId = "0IvjmmF4JolSbadyHg5rEr";
-  // useEffect(() => {
-  //   const toScreenshot = document.getElementById("social-share");
-  //   html2canvas(toScreenshot, {
-  //     allowTaint: true,
-  //     useCORS: true,
-  //     backgroundColor: "#ecfbf1",
-  //   }).then((canvas) => {
-  //     var link = document.createElement("a");
-  //     link.download = "verse-a-tility.png";
-  //     link.href = canvas.toDataURL();
-  //     link.click();
-  //   });
-  // }, []);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+  const [loadedImage, setLoadedImage] = useState(<div></div>);
+  var playlistId = props.infoArray[0][0];
+
+  useEffect(() => {
+    console.log("Converting HTML to canvas");
+    const toScreenshot = document.getElementById("social-share");
+    html2canvas(toScreenshot, {
+      allowTaint: true,
+      useCORS: true,
+      backgroundColor: "#ecfbf1",
+    }).then((canvas) => {
+      var image = new Image();
+      image.src = canvas.toDataURL();
+      var mySrc = canvas.toDataURL();
+      setLoadedImage(<img src={mySrc} width="100%"></img>);
+      document.getElementById("social-share").style.display = "none";
+
+      // var link = document.createElement("a");
+      // link.download = "verse-a-tility.png";
+      // link.href = canvas.toDataURL();
+      // link.click();
+    });
+  }, []);
 
   const handleOnClick = () => {
     console.log("IN SHARE CLICK");
@@ -85,64 +105,91 @@ function PlaylistView(props) {
       navigator.clipboard.writeText(
         "https://open.spotify.com/playlist/" + playlistId
       );
-      toast("Link Copied!");
+      toast("Playlist Link Copied!");
     }
   };
-
-  return (
-    <>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <div id="social-share">
-        <SocialShare />
-      </div>
-      <div className="container content">
-        <div className="row text-center justify-content-center">
-          <div className="col-lg-6 col-12 playlist-text-container">
-            <h2 className="header-text">Your Final Playlist</h2>
-            <p className="main-text">
-              Start planning your next karaoke night, because these songs were
-              picked to impress
-            </p>
+  if (isMobile) {
+    return (
+      <>
+        <div id="social-share">
+          <SocialShare infoArray={props.infoArray} />
+        </div>
+        <div className="container content">
+          <div className="row justify-content-center">
+            <div className="col-11 text-center">
+              <p className="main-text social-share-bold-text">
+                Click{" "}
+                <a href={"https://open.spotify.com/playlist/" + playlistId}>
+                  here
+                </a>{" "}
+                for your full playlist!
+                <br />
+              </p>
+              <p className="playlist-sharing-text">
+                Hold down on this image to save it and share with your friends!
+              </p>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-10">{loadedImage}</div>
           </div>
         </div>
-        <div className="row text-center justify-content-center pt-1">
-          <div className="col-lg-6 col-12">
-            <div className="playlist-iframe-container">
-              <Iframe
-                className="playlist-iframe"
-                url={"https://open.spotify.com/embed/playlist/" + playlistId}
-                width="100%"
-                height="100%"
-                display="initial"
-              />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+
+        <div className="container content">
+          <div className="row text-center justify-content-center">
+            <div className="col-lg-6 col-12 playlist-text-container">
+              <h2 className="header-text">Your Final Playlist</h2>
+              <p className="main-text">
+                Start planning your next karaoke night, because these songs were
+                picked to impress
+              </p>
+            </div>
+          </div>
+          <div className="row text-center justify-content-center pt-1">
+            <div className="col-lg-6 col-12">
+              <div className="playlist-iframe-container">
+                <Iframe
+                  className="playlist-iframe"
+                  url={"https://open.spotify.com/embed/playlist/" + playlistId}
+                  width="100%"
+                  height="100%"
+                  display="initial"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row text-center justify-content-center">
+            <div className="col-lg-6 col-12 share-container">
+              <button
+                className="green-button"
+                id="share-button"
+                onClick={handleOnClick}
+              >
+                Share
+              </button>
             </div>
           </div>
         </div>
-
-        <div className="row text-center justify-content-center">
-          <div className="col-lg-6 col-12 share-container">
-            <button
-              className="green-button"
-              id="share-button"
-              onClick={handleOnClick}
-            >
-              Share
-            </button>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 
   // return (
   //   <div className="container content">

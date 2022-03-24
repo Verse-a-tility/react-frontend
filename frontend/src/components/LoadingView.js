@@ -31,6 +31,7 @@ function LoadingView(props) {
           response.data
         );
         props.setCurrentView("FinishedLoadingView");
+        props.setInfoArray(response.data);
         props.setPlaylistSongs(response.data[1]);
         props.setPlaylistId(response.data[0][0]);
         console.log("playlist id in loading view is:", response.data[0][0]);

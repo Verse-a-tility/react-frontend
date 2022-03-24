@@ -18,7 +18,8 @@ function RatingView(props) {
 
   // TEMP
   // CHANGE PLAYLIST SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
-  var playlistSongs = props.playlistSongs;
+  // var playlistSongs = props.playlistSongs;
+  var playlistSongs = props.infoArray[1];
   // var playlistSongs = [
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Sweet Home Alabama", "Boney M."],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone", "Soulja Boy"],
@@ -35,7 +36,6 @@ function RatingView(props) {
     return <div></div>;
   }
 
-  console.log("playlistSong Ids is:", props.playlistSongs);
   const oneIndexedSongNumber = currentSongNumber + 1;
   return (
     <div className="container content">

@@ -5,65 +5,63 @@ import "./SocialShare.css";
 import SocialShareItem from "./SocialShareItem";
 
 function SocialShare(props) {
-  //   const [loadingState, setLoadingState] = useState(true);
-  //   var songs = props.playlistSongs;
-  var displayName = "@NaluTripician";
-  var songs = [
-    [
-      "5jkFvD4UJrmdoezzT1FRoP",
-      "Sweet Home Alabama",
-      "Boney M.",
-      "https://i.scdn.co/image/ab67616d0000b27320b467550945fd123e00f0a5",
-    ],
-    [
-      "0nDqJMKcSTtYlGK6OQ3sLC",
-      "Kiss Me Thru The Phone",
-      "Soulja Boy",
-      "https://i.scdn.co/image/ab67616d0000b273768828c6867cd0472fc84e4d",
-    ],
-    [
-      "5jkFvD4UJrmdoezzT1FRoP",
-      "Sweet Home ahhhhh",
-      "Boney M.",
-      "https://i.scdn.co/image/ab67616d0000b27320b467550945fd123e00f0a5",
-    ],
-    [
-      "0nDqJMKcSTtYlGK6OQ3sLC",
-      "Kiss Me Thru The adasdas",
-      "Soulja Boy",
-      "https://i.scdn.co/image/ab67616d0000b273768828c6867cd0472fc84e4d",
-    ],
-  ];
+  var songs = props.infoArray[1];
+  var displayName = props.infoArray[0][1];
+  var karaokeability_score = props.infoArray[0][2];
+
+  //   Turn the array into an array of two element arrays, so [song1, song2, song3, song4] -> [[song1, song2], [song3,song4]]
   const songRows = songs.reduce(function (rows, key, index) {
     return (
       (index % 2 == 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
       rows
     );
   }, []);
-  console.log(songRows);
-  var karaokeability_score = 25;
 
   return (
     <div className="container">
       <div className="row justify-content-center text-center">
         <div className="karaokeability-score-container">
-          <p className="main-text social-share-green-text">{displayName}</p>
-          <p className="header-text social-share-green-text">
-            Your Library's Karaoke Score
+          <p className="social-share-green-text social-share-bold-text display-name-text mb-1 pt-3">
+            {displayName.slice(0, 30)}
           </p>
-          <p className="karaoke-score">{karaokeability_score + "%"}</p>
+          <p className="social-share-library-score social-share-green-text social-share-bold-text pb-0 mb-0">
+            My Spotify's Karaokeability Score
+          </p>
+          <p className="karaoke-score pb-0 mb-0">
+            {karaokeability_score + "%"}
+          </p>
+          <p>My Top 10 Karaoke Songs</p>
         </div>
       </div>
       {songRows.map((row, index) => (
-        <div className="row">
+        <div className="row pb-4" key={index}>
           <div className="col-6">
-            <SocialShareItem song={row[0]} songNumber={index} />
+            <SocialShareItem song={row[0]} songNumber={index + index + 1} />
           </div>
-          <div className="col-6">
-            <SocialShareItem song={row[1]} songNumber={index + 1} />
+          <div className="col-6 ">
+            <SocialShareItem song={row[1]} songNumber={index + index + 2} />
           </div>
         </div>
       ))}
+      <div className="row justify-content-between align-items-center pt-5 pb-1">
+        <div className="col-6">
+          <div className="row align-items-center">
+            <div className="col-5">
+              <img src="Verse-a-tility_logo-transparent.png" width="100%"></img>
+            </div>
+            <div className="col-7 px-0">
+              <p className="social-share-green-text social-share-bold-text mb-0">
+                Verse-a-tility
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-3">
+          <p className="social-share-artist-text social-share-green-text mb-0">
+            verseatility.co
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
