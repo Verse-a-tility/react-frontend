@@ -13,7 +13,7 @@ function RateSong(props) {
   const [displayMessage, setDisplayMessage] = useState(defaultDisplayMessage);
   var buttonMessage = "Next";
 
-  if (props.currentSongNumber == 9) {
+  if (props.currentSongNumber == 0) {
     buttonMessage = "See Final Playlist";
   }
 
@@ -54,10 +54,10 @@ function RateSong(props) {
               "current song number in rate song is:",
               props.currentSongNumber
             );
-            if (props.currentSongNumber == 9) {
+            if (props.currentSongNumber == 0) {
               props.setCurrentView("PlaylistView");
             } else {
-              props.setCurrentSongNumber(props.currentSongNumber + 1);
+              props.setCurrentSongNumber(props.currentSongNumber - 1);
               setCurrRating(0);
               setDisplayMessage(defaultDisplayMessage);
             }

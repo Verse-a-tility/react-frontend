@@ -23,16 +23,16 @@ function SocialShareItem(props) {
   }
   //   Check if song/artist will overflow, and then manually slice the string and add ellipses
   //   HTML2Canvas can't handle text-overflow so setting text-overflow: ellipsis doesn't work for creating the image
-  //   TextBoxWidth being 108 is a rough estimate of the size of the text box. It is 108 on iphone 8 and 113 on iphone 12 pro, so not too much change
+  //   TextBoxWidth being 140 is a rough estimate of the size of the text box.
 
   var artistText = song[2];
   var songText = "#" + songNumber + " " + song[1];
   var songTextWidth = textWidth(
     songText,
-    "font-weight:500; font-size: 0.8rem;"
+    "font-weight:500; font-size: 0.7rem;"
   );
   var artistTextWidth = textWidth(artistText, "font-size: 0.65rem;");
-  var textBoxWidth = 108;
+  var textBoxWidth = 140;
 
   if (songTextWidth > textBoxWidth) {
     var percentCanFit = textBoxWidth / songTextWidth;

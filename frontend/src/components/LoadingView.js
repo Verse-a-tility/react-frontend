@@ -11,7 +11,6 @@ function LoadingView(props) {
   // console.log("access code is:", props.accessCode);
 
   const options = {};
-  const client_id = "b36ac668448643798290591e95096ff7";
   const navigate = useNavigate();
   // Remove the access code from the url
   // useEffect(() => {}, []);

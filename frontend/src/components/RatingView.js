@@ -9,7 +9,12 @@ import { useNavigate } from "react-router-dom";
 import Iframe from "react-iframe";
 
 function RatingView(props) {
-  const [currentSongNumber, setCurrentSongNumber] = useState(0);
+  console.log("info array is:", props.infoArray[1].length);
+  var playlistSongs = props.infoArray[1];
+
+  const [currentSongNumber, setCurrentSongNumber] = useState(
+    playlistSongs.length - 1
+  );
   const navigate = useNavigate();
   // Remove the access code from the url
   useEffect(() => {
@@ -19,7 +24,6 @@ function RatingView(props) {
   // TEMP
   // CHANGE PLAYLIST SONGS TO PROPS.PLAYLIST SONGS OR WHATEVER
   // var playlistSongs = props.playlistSongs;
-  var playlistSongs = props.infoArray[1];
   // var playlistSongs = [
   //   ["5jkFvD4UJrmdoezzT1FRoP", "Sweet Home Alabama", "Boney M."],
   //   ["0nDqJMKcSTtYlGK6OQ3sLC", "Kiss Me Thru The Phone", "Soulja Boy"],
@@ -30,13 +34,14 @@ function RatingView(props) {
     "and playlistSoongs,.length is:",
     playlistSongs.length
   );
-  if (currentSongNumber == playlistSongs.length) {
+  if (currentSongNumber < 0) {
     console.log("in current song number = playlistsoings.length ");
     props.setCurrentView("PlaylistView");
     return <div></div>;
   }
 
   const oneIndexedSongNumber = currentSongNumber + 1;
+  console.log("one indexed song number is:", oneIndexedSongNumber);
   return (
     <div className="container content">
       <div className="row text-center justify-content-center">

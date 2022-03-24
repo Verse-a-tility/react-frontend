@@ -38,7 +38,9 @@ function PlaylistView(props) {
       var image = new Image();
       image.src = canvas.toDataURL();
       var mySrc = canvas.toDataURL();
-      setLoadedImage(<img src={mySrc} width="100%"></img>);
+      setLoadedImage(
+        <img src={mySrc} width="100%" alt="Verse-a-tility social share"></img>
+      );
       document.getElementById("social-share").style.display = "none";
 
       // var link = document.createElement("a");
@@ -118,11 +120,11 @@ function PlaylistView(props) {
           <div className="row justify-content-center">
             <div className="col-11 text-center">
               <p className="main-text social-share-bold-text">
-                Click{" "}
+                View your full 25 song{" "}
                 <a href={"https://open.spotify.com/playlist/" + playlistId}>
-                  here
+                  playlist
                 </a>{" "}
-                for your full playlist!
+                !
                 <br />
               </p>
               <p className="playlist-sharing-text">

@@ -63,13 +63,13 @@ function ViewController() {
       ],
       [
         "5jkFvD4UJrmdoezzT1FRoP",
-        "Sweet Home ahhhhh",
+        "Almost Closing Time",
         "Boney M.",
         "https://i.scdn.co/image/ab67616d0000b27320b467550945fd123e00f0a5",
       ],
       [
         "0nDqJMKcSTtYlGK6OQ3sLC",
-        "Kiss Me Thru The adasdas",
+        "Closing Time",
         "Soulja Boy",
         "https://i.scdn.co/image/ab67616d0000b273768828c6867cd0472fc84e4d",
       ],
